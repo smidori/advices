@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Get random advice
+    </ion-title>    
+  </ion-toolbar>
+  <ion-row >
+    <ion-col>
+      <p>Advices about
+      <ion-icon routerLink="/subject" size="large" name="arrow-back-outline">
+        </ion-icon></p>
+      </ion-col>
+  </ion-row>
+  
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Get your advice</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card lines="none">
+    <ion-button (click)="getRandomAdvice()">
+      <ion-icon slot="start" name="shuffle"> </ion-icon>
+      Random Advice
+    </ion-button>
+    <div *ngIf="result">
+      <p style="font-weight: 800; font-size: 1em;">{{result}}</p>
+    </div>
+  </ion-card>
+
+
+</ion-content>

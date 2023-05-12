@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Get advices about
+    </ion-title>
+  </ion-toolbar>
+  <ion-row>
+    <ion-col>
+      <p>Random advice
+        <ion-icon routerLink="/home" size="large" name="arrow-back-outline">
+        </ion-icon>
+      </p>
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+  <ion-card>
+    <ion-input [(ngModel)]="subject"  label="About" type="text" [counter]="true" maxlength="15"></ion-input>
+
+    <ion-button [disabled]="!subject" (click)="getAdvicesAbout()">
+      <ion-icon slot="start" name="list"></ion-icon>Advices about
+    </ion-button>
+    
+  </ion-card>
+
+  <ion-card *ngFor="let advice of results ; let i = index; " class="ion-margin">
+    <p style="font-weight: 800; font-size: 1em;">{{advice.advice}}</p>
+  </ion-card>
+
+</ion-content>
